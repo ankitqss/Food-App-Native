@@ -1,6 +1,7 @@
 import { View, Text, TextStyle, Platform, StyleSheet } from 'react-native';
 import React, { FC } from 'react';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { Colors } from '@unistyles/Constants';
 
 type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7';
 type PlatformType = 'ios' | 'android';
@@ -10,7 +11,7 @@ interface CustomTextProps {
   fontFamily?: string;
   fontSize?: number;
   color?: string;
-  style: TextStyle | TextStyle[];
+  style?: TextStyle | TextStyle[];
   children: React.ReactNode;
   numberOfLines?: number;
   onLayout?: (event: any) => void;
@@ -51,10 +52,14 @@ const CustomText: FC<CustomTextProps> = ({
     <Text
       numberOfLines={numberOfLines != undefined ? numberOfLines : undefined}
       onLayout={onLayout}
-      style={[styles.text, { color: color || Colors.text }]}
+      style={[
+        styles.text,
+        { color: color || Colors.text, fontSize: computedFontSize },
+        fontFamilyStyle,
+      ]}
       {...props}
     >
-      CustomText
+      {children}
     </Text>
   );
 };
@@ -63,6 +68,6 @@ export default CustomText;
 
 const styles = StyleSheet.create({
   text: {
-    textAlign: 'left',
+    textAlign: 'center',
   },
 });
