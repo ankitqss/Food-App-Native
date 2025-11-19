@@ -1,10 +1,11 @@
 import { View, Text, Image } from 'react-native';
-import React, { FC } from 'react';
+import React from 'react';
 import { useStyles } from 'react-native-unistyles';
 import { emptyStyles } from '@unistyles/emptyStyles';
 
-const DinnigScreen: FC = () => {
+const DiningScreen = () => {
   const { styles } = useStyles(emptyStyles);
+
   return (
     <View style={styles.container(false)}>
       <Image
@@ -15,4 +16,4 @@ const DinnigScreen: FC = () => {
   );
 };
 
-export default DinnigScreen;
+export default DiningScreen;

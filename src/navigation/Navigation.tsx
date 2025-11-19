@@ -16,15 +16,20 @@ const Navigation: FC = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator initialRouteName="SplashScreen">
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen
-          options={{ animation: 'fade' }}
+          name="SplashScreen"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          options={{ animation: 'fade', headerShown: false }}
           name="LoginScreen"
           component={LoginScreen}
         />
         <Stack.Screen
           options={{
             animation: 'fade',
+            headerShown: false,
           }}
           name="UserBottomTab"
           component={AnimatedTabs}
