@@ -9,6 +9,8 @@ import SplashScreen from '@features/auth/SplashScreen';
 import LoginScree from '@features/auth/LoginScreen';
 import LoginScreen from '@features/auth/LoginScreen';
 import { navigationRef } from '@utils/NavigationUtils';
+import UserBottomTab from '@features/tabs/UserBottomTab';
+import AnimatedTabs from '@features/tabs/AnimatedTabs';
 
 const Navigation: FC = () => {
   return (
@@ -19,6 +21,13 @@ const Navigation: FC = () => {
           options={{ animation: 'fade' }}
           name="LoginScreen"
           component={LoginScreen}
+        />
+        <Stack.Screen
+          options={{
+            animation: 'fade',
+          }}
+          name="UserBottomTab"
+          component={AnimatedTabs}
         />
       </Stack.Navigator>
     </NavigationContainer>
