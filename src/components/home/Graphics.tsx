@@ -14,7 +14,7 @@ const Graphics = () => {
         style={styles.lottie}
         source={require('@assets/animations/event.json')}
         autoPlay
-        loop={Platform.OS !== 'android'}
+        loop={true}
         hardwareAccelerationAndroid
       />
     </View>
